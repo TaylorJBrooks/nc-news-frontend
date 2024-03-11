@@ -1,6 +1,6 @@
 import { Route, Routes } from 'react-router-dom'
 import './App.css'
-import { Header, Home } from './components'
+import { Header, Home, SingleArticle } from './components'
 
 function App() {
 
@@ -9,6 +9,7 @@ function App() {
     <Header/>
     <Routes>
       <Route path='/' element={<Home/>}/>
+      <Route path='/articles/:article_id' element={<SingleArticle/>}/>
     </Routes>
     </>
   )
