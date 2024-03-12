@@ -29,7 +29,7 @@ export default function TopicsList() {
           All Articles
         </p>
         {topicsList.map((topic) => {
-          const topicName = topic.slug[0].toUpperCase() + topic.slug.slice(1);
+          const topicName = topic.slug[0].toUpperCase() + topic.slug.slice(1) + ' Articles'
           return (
             <p
               key={topic.slug}
