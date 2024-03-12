@@ -25,6 +25,12 @@ export function patchArticle(articleId, vote){
     return ncNewsArticles.patch(`/${articleId}`, { "inc_votes": vote })
 }
 
+export function postComment(articleId, newComment){
+    return ncNewsArticles.post(`/${articleId}/comments`, newComment).then(({data})=>{
+        return data;
+    })
+}
+
 const ncNewsUsers = axios.create({baseURL: "https://nc-news-97rk.onrender.com/api/users"})
 
 export function getUsers(){

@@ -1,11 +1,14 @@
 import { useContext } from 'react'
 import { UserContext } from '../contexts/User'
+import { useNavigate } from 'react-router-dom';
 
 export default function UserCard({user}) {
     const { setLoggedInUser } = useContext(UserContext);
+    const navigate = useNavigate()
 
     function handleUserCardClick(){
         setLoggedInUser({...user, loggedIn: true})
+        navigate('/')
     }
 
   return (
