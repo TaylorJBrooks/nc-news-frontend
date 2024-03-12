@@ -1,6 +1,6 @@
 import { Route, Routes } from "react-router-dom";
 import "./App.css";
-import { Header, Home, UsersList, SingleArticle } from "./components";
+import { Header, UsersList, SingleArticle, TopicsList, ArticlesList } from "./components";
 import { UserProvider } from "./contexts/User";
 
 function App() {
@@ -8,9 +8,11 @@ function App() {
     <UserProvider>
       <Header />
       <Routes>
-        <Route path="/" element={<Home />} />
+        <Route path="/" element={<ArticlesList />} />
+        <Route path='/topics/:topic_name' element={<ArticlesList />}/>
         <Route path="/articles/:article_id" element={<SingleArticle />} />
         <Route path="/log-in" element={<UsersList />} />
+        <Route path="/topics" element={<TopicsList/>}/>
       </Routes>
     </UserProvider>
   );

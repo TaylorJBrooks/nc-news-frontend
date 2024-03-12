@@ -2,7 +2,6 @@
   box-sizing: border-box;
   color: black;
   text-decoration: none;
-  /* text-align: center; */
 }
 
 .articles-list {
@@ -90,4 +89,35 @@ img {
 .user-card:hover {
   background-color: rgb(227, 230, 230);
   border: 2px solid black;
+}
+
+.drop-button {
+  margin: 0;
+  cursor: pointer;
+}
+
+.topics-dropdown-content {
+  display: none;
+  position: absolute;
+  background-color: #f9f9f9;
+  min-width: 160px;
+  box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+  z-index: 1;
+}
+
+.topics-dropdown-content p {
+  float: none;
+  color: black;
+  padding: 12px 16px;
+  display: block;
+  text-align: left;
+}
+.topics-dropdown-content p:hover {
+  background-color: #ddd;
+  cursor: pointer;
+}
+
+.topics-dropdown:hover .topics-dropdown-content {
+  display: block;
+  cursor: pointer;
 }
