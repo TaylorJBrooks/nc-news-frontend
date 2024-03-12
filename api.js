@@ -38,3 +38,9 @@ export function getUsers(){
         return data;
     })
 }
+
+const ncNewsComments = axios.create({baseURL: "https://nc-news-97rk.onrender.com/api/comments"})
+
+export function deleteComment(commentId){
+    return ncNewsComments.delete(`/${commentId}`)
+}

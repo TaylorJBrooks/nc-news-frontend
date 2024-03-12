@@ -3,7 +3,7 @@ import { useParams } from "react-router-dom";
 import { getArticleById, patchArticle } from "../../api";
 import CommentsList from "./CommentsList";
 import Loading from "./Loading";
-import VoteError from "./VoteError";
+import ErrorComponent from "./ErrorComponent";
 
 export default function SingleArticle() {
   const { article_id } = useParams();
@@ -66,7 +66,7 @@ export default function SingleArticle() {
         <button onClick={()=>{handleVoteButtons(1)}} disabled={hasVoted}>Like This! +1</button>
         <button onClick={()=>{handleVoteButtons(-1)}} disabled={hasVoted}>Not For Me -1</button>
      </div>
-     <VoteError isError={isError}/>
+     <ErrorComponent isError={isError}/>
       <CommentsList article_id={article_id} />
     </div>
   );

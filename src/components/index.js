@@ -6,7 +6,7 @@ import SingleArticle from "./SingleArticle";
 import CommentsList from "./CommentsList";
 import CommentCard from "./CommentCard";
 import Loading from "./Loading";
-import VoteError from "./VoteError";
+import VoteError from "./ErrorComponent";
 import UsersList from "./UsersList";
 import UserCard from "./UserCard";
 import AddComment from "./AddComment";
