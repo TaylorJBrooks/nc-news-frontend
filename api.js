@@ -44,3 +44,11 @@ const ncNewsComments = axios.create({baseURL: "https://nc-news-97rk.onrender.com
 export function deleteComment(commentId){
     return ncNewsComments.delete(`/${commentId}`)
 }
+
+const ncNewsTopics = axios.create({baseURL: "https://nc-news-97rk.onrender.com/api/topics"})
+
+export function getTopics(){
+    return ncNewsTopics.get('/').then(({data})=>{
+        return data;
+    })
+}
