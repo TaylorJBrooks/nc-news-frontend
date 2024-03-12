@@ -1,17 +1,18 @@
 import { Route, Routes } from "react-router-dom";
 import "./App.css";
-import { Header, Home, SingleArticle } from "./components";
-import UserContext from "./contexts/User";
+import { Header, Home, UsersList, SingleArticle } from "./components";
+import { UserProvider } from "./contexts/User";
 
 function App() {
   return (
-    <UserContext>
+    <UserProvider>
       <Header />
       <Routes>
         <Route path="/" element={<Home />} />
         <Route path="/articles/:article_id" element={<SingleArticle />} />
+        <Route path="/log-in" element={<UsersList />} />
       </Routes>
-    </UserContext>
+    </UserProvider>
   );
 }
 

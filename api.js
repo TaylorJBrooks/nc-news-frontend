@@ -24,3 +24,11 @@ export function getCommentsByArticleId(articleId){
 export function patchArticle(articleId, vote){
     return ncNewsArticles.patch(`/${articleId}`, { "inc_votes": vote })
 }
+
+const ncNewsUsers = axios.create({baseURL: "https://nc-news-97rk.onrender.com/api/users"})
+
+export function getUsers(){
+    return ncNewsUsers.get('/').then(({data})=>{
+        return data;
+    })
+}

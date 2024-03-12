@@ -7,5 +7,7 @@ import CommentsList from "./CommentsList";
 import CommentCard from "./CommentCard";
 import Loading from "./Loading";
 import VoteError from "./VoteError";
+import UsersList from "./UsersList";
+import UserCard from "./UserCard";
 
-export {Header, Home, ArticlesList, ArticleCard, SingleArticle, CommentsList, CommentCard, Loading, VoteError};
+export { Header, Home, ArticlesList, ArticleCard, SingleArticle, CommentsList, CommentCard, Loading, VoteError, UsersList, UserCard };
