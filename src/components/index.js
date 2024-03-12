@@ -6,5 +6,6 @@ import SingleArticle from "./SingleArticle";
 import CommentsList from "./CommentsList";
 import CommentCard from "./CommentCard";
 import Loading from "./Loading";
+import VoteError from "./VoteError";
 
-export {Header, Home, ArticlesList, ArticleCard, SingleArticle, CommentsList, CommentCard, Loading};
+export {Header, Home, ArticlesList, ArticleCard, SingleArticle, CommentsList, CommentCard, Loading, VoteError};
