@@ -1,6 +1,6 @@
 import { Route, Routes } from "react-router-dom";
 import "./App.css";
-import { Header, Home, UsersList, SingleArticle, TopicsList, ArticlesList } from "./components";
+import { Header, UsersList, SingleArticle, TopicsList, ArticlesList } from "./components";
 import { UserProvider } from "./contexts/User";
 
 function App() {

@@ -1,5 +1,4 @@
 import Header from "./Header";
-import Home from "./Home";
 import ArticlesList from "./ArticlesList";
 import ArticleCard from "./ArticleCard";
 import SingleArticle from "./SingleArticle";
@@ -12,4 +11,4 @@ import UserCard from "./UserCard";
 import AddComment from "./AddComment";
 import TopicsList from "./TopicsList";
 
-export { Header, Home, ArticlesList, ArticleCard, SingleArticle, CommentsList, CommentCard, Loading, VoteError, UsersList, UserCard, AddComment, TopicsList };
+export { Header, ArticlesList, ArticleCard, SingleArticle, CommentsList, CommentCard, Loading, VoteError, UsersList, UserCard, AddComment, TopicsList };
