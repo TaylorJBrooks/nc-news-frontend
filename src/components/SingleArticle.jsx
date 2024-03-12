@@ -21,6 +21,7 @@ export default function SingleArticle() {
 
   const [isLoading, setIsLoading] = useState(true);
   const [isError, setIsError] = useState(false)
+  const [hasVoted, setHasVoted] = useState(false)
 
   useEffect(() => {
     setIsLoading(true);
@@ -31,6 +32,7 @@ export default function SingleArticle() {
   }, []);
 
   function handleVoteButtons(vote){
+    setHasVoted(true)
     setSelectedArticle((currArticle)=>{
         return {...currArticle, votes: currArticle.votes + vote}
     })
@@ -42,6 +44,7 @@ export default function SingleArticle() {
             return {...currArticle, votes: currArticle.votes - vote}
         })
         setIsError(true)
+        setHasVoted(false)
     })
   }
 
@@ -60,8 +63,8 @@ export default function SingleArticle() {
         <p>Votes: {votes}</p>
       </div>
       <div className="article-card-section">
-        <button onClick={()=>{handleVoteButtons(1)}}>Like This! +1</button>
-        <button onClick={()=>{handleVoteButtons(-1)}}>Not For Me -1</button>
+        <button onClick={()=>{handleVoteButtons(1)}} disabled={hasVoted}>Like This! +1</button>
+        <button onClick={()=>{handleVoteButtons(-1)}} disabled={hasVoted}>Not For Me -1</button>
      </div>
      <VoteError isError={isError}/>
       <CommentsList article_id={article_id} />
