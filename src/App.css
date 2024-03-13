@@ -96,7 +96,7 @@ img {
   cursor: pointer;
 }
 
-.topics-dropdown-content {
+.dropdown-content {
   display: none;
   position: absolute;
   background-color: #f9f9f9;
@@ -105,19 +105,20 @@ img {
   z-index: 1;
 }
 
-.topics-dropdown-content p {
+.dropdown-content p {
   float: none;
   color: black;
   padding: 12px 16px;
   display: block;
   text-align: left;
 }
-.topics-dropdown-content p:hover {
+.dropdown-content p:hover {
   background-color: #ddd;
   cursor: pointer;
 }
 
-.topics-dropdown:hover .topics-dropdown-content {
+.dropdown:hover .dropdown-content {
   display: block;
   cursor: pointer;
 }
+
