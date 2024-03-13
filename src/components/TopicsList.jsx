@@ -6,6 +6,7 @@ export default function TopicsList() {
   const [topicsList, setTopicsList] = useState([]);
   const [selectedTopic, setSelectedTopic] = useState("All Articles");
   const navigate = useNavigate();
+  
   useEffect(() => {
     getTopics().then(({ topics }) => {
       setTopicsList(topics);
