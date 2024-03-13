@@ -1,12 +1,19 @@
 import React, { useEffect, useState } from "react";
 import { getTopics } from "../../api";
-import { useNavigate } from "react-router-dom";
+import { useLocation, useNavigate } from "react-router-dom";
 
 export default function TopicsList() {
   const [topicsList, setTopicsList] = useState([]);
   const [selectedTopic, setSelectedTopic] = useState("All Articles");
   const navigate = useNavigate();
-  
+  const location = useLocation();
+
+  useEffect(()=>{
+    if(location.pathname === '/'){
+      setSelectedTopic("All Articles")
+    }
+  }, [location])
+
   useEffect(() => {
     getTopics().then(({ topics }) => {
       setTopicsList(topics);
