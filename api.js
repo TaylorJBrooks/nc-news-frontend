@@ -2,8 +2,8 @@ import axios from "axios";
 
 const ncNewsArticles = axios.create({baseURL: "https://nc-news-97rk.onrender.com/api/articles"})
 
-export function getArticles(topicName){
-    return ncNewsArticles.get('/', {params: {topic: topicName}}).then(({data})=>{
+export function getArticles(orderBy, sortBy, topicName){
+    return ncNewsArticles.get('', {params: {topic: topicName, order: orderBy, sort_by: sortBy}}).then(({data})=>{
         return data;
     })
 }
