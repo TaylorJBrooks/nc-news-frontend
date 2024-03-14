@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from "react";
 import { getTopics } from "../../api";
-import { useLocation, Link } from "react-router-dom";
+import { useLocation, Link, useParams } from "react-router-dom";
 import ErrorPage from "./ErrorPage";
 
 export default function TopicsList() {
@@ -12,6 +12,11 @@ export default function TopicsList() {
   useEffect(() => {
     if (location.pathname === "/") {
       setSelectedTopic("All Articles");
+    }
+    const pathSections = location.pathname.split('/')
+    if(pathSections[1] === 'topics'){
+      const selectedTopicName = pathSections[2][0].toUpperCase() + pathSections[2].slice(1) + " Articles"
+      setSelectedTopic(selectedTopicName)
     }
   }, [location]);
 

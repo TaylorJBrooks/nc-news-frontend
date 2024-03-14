@@ -2,8 +2,8 @@ import axios from "axios";
 
 const ncNewsArticles = axios.create({baseURL: "https://nc-news-97rk.onrender.com/api/articles"})
 
-export function getArticles(orderBy, sortBy, topicName){
-    return ncNewsArticles.get('', {params: {topic: topicName, order: orderBy, sort_by: sortBy}}).then(({data})=>{
+export function getArticles({orderBy, sortBy, topic_name, page}){
+    return ncNewsArticles.get('', {params: {topic: topic_name, order: orderBy, sort_by: sortBy, p: page, limit: 10}}).then(({data})=>{
         return data;
     })
 }
@@ -15,8 +15,8 @@ export function getArticleById(articleId){
     })
 }
 
-export function getCommentsByArticleId(articleId){
-    return ncNewsArticles.get(`/${articleId}/comments`).then(({data})=>{
+export function getCommentsByArticleId({articleId, limit}){
+    return ncNewsArticles.get(`/${articleId}/comments`, {params: {limit}}).then(({data})=>{
         return data;
     })
 }

@@ -76,7 +76,7 @@ export default function SingleArticle() {
         <button onClick={()=>{handleVoteButtons(-1)}} disabled={hasVoted}>Not For Me -1</button>
      </div>
      <ErrorComponent isError={isError}/>
-      <CommentsList article_id={article_id} />
+      <CommentsList selectedArticle={selectedArticle} setSelectedArticle={setSelectedArticle} />
     </div>
   );
 }
