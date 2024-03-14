@@ -64,7 +64,7 @@ export default function SingleArticle() {
       <h2>{title}</h2>
       <p>Author: {author}</p>
       <p>Created at: {created_at}</p>
-      <img src={article_img_url} />
+      <img src={article_img_url} alt="" />
       <p>Body: {body}</p>
       <div className="article-card-section">
         <p>Topic: {topic}</p>

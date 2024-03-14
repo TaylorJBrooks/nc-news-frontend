@@ -43,8 +43,8 @@ export default function ArticlesList() {
 
   return isLoading ? <Loading/> : (
     <>
-    <label>Sort By:
-    <select className="dropdown" name="sort-by-dropdown" value={selectedSortBy} onChange={(e)=> handleSelection(e)}>
+    <label htmlFor='sort-by-dropdown'>Sort By:
+    <select id='sort-by-dropdown' className="dropdown" name="sort-by-dropdown" value={selectedSortBy} onChange={(e)=> handleSelection(e)}>
         <option value='sort=created_at&order=desc'>Most recent</option>
         <option value='sort=created_at&order=asc'>Oldest</option>
         <option value='sort=votes&order=desc'>Votes high to low</option>
