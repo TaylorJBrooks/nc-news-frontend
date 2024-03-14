@@ -22,6 +22,10 @@ export default function ArticlesList() {
   const [page, setPage] = useState(1);
   const [totalCount, setTotalCount] = useState()
 
+  useEffect(()=>{
+    setPage(1)
+  }, [location])
+
   useEffect(() => {
     const order = searchParams.get("order") || "desc";
     const sort = searchParams.get("sort") || "created_at";
@@ -37,7 +41,7 @@ export default function ArticlesList() {
       .catch((err) => {
         setError({ err });
       });
-  }, [topic_name, location, page]);
+  }, [page, location]);
 
   function handleSelection(e) {
     const selectedSort = e.target.value.split('&')[0]
