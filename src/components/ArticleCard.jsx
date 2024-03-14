@@ -22,7 +22,7 @@ export default function ArticleCard({ article }) {
         <p>
           Author: {author}
         </p>
-        <img src={article_img_url} />
+        <img src={article_img_url} alt="" />
         <div className="article-card-section">
           <p>Comments: {comment_count}</p>
           <p>Votes: {votes}</p>
