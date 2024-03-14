@@ -4,6 +4,7 @@ import { getArticleById, patchArticle } from "../../api";
 import CommentsList from "./CommentsList";
 import Loading from "./Loading";
 import ErrorComponent from "./ErrorComponent";
+import ErrorPage from "./ErrorPage";
 
 export default function SingleArticle() {
   const { article_id } = useParams();
@@ -22,13 +23,17 @@ export default function SingleArticle() {
   const [isLoading, setIsLoading] = useState(true);
   const [isError, setIsError] = useState(false)
   const [hasVoted, setHasVoted] = useState(false)
+  const [error, setError] = useState(null);
 
   useEffect(() => {
     setIsLoading(true);
     getArticleById(article_id).then(( article ) => {
       setSelectedArticle(article);
       setIsLoading(false);
-    });
+      setError(null);
+    }).catch((err)=>{
+      setError({err})
+    })
   }, []);
 
   function handleVoteButtons(vote){
@@ -47,6 +52,10 @@ export default function SingleArticle() {
         setHasVoted(false)
     })
   }
+
+  if(error) {
+    return <ErrorPage error={error.err.response}/>
+}
 
   return isLoading ? (
     <Loading />

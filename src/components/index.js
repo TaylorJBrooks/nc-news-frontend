@@ -5,10 +5,11 @@ import SingleArticle from "./SingleArticle";
 import CommentsList from "./CommentsList";
 import CommentCard from "./CommentCard";
 import Loading from "./Loading";
-import VoteError from "./ErrorComponent";
+import ErrorComponent from "./ErrorComponent";
 import UsersList from "./UsersList";
 import UserCard from "./UserCard";
 import AddComment from "./AddComment";
 import TopicsList from "./TopicsList";
+import ErrorPage from "./ErrorPage";
 
-export { Header, ArticlesList, ArticleCard, SingleArticle, CommentsList, CommentCard, Loading, VoteError, UsersList, UserCard, AddComment, TopicsList };
+export { Header, ArticlesList, ArticleCard, SingleArticle, CommentsList, CommentCard, Loading, ErrorComponent, UsersList, UserCard, AddComment, TopicsList, ErrorPage };

@@ -3,6 +3,7 @@ import { getArticles } from '../../api'
 import ArticleCard from './ArticleCard'
 import Loading from './Loading'
 import { useLocation, useNavigate, useParams, useSearchParams } from 'react-router-dom'
+import ErrorPage from './ErrorPage'
 
 export default function ArticlesList() {
     const [articlesListItems, setArticlesListItems] = useState([])
@@ -11,7 +12,8 @@ export default function ArticlesList() {
     const [ searchParams ] = useSearchParams()
     const [selectedSortBy, setSelectedSortBy] = useState('sort=created_at&order=desc')
     const navigate = useNavigate();
-    const location = useLocation()
+    const location = useLocation();
+    const [error, setError] = useState(null);
 
     useEffect(()=>{
         const order = searchParams.get('order') || 'desc'
@@ -21,16 +23,22 @@ export default function ArticlesList() {
             setArticlesListItems(articles)
             setSelectedSortBy(`sort=${sort}&order=${order}`)
             setIsLoading(false)
+            setError(null)
+        }).catch((err)=>{
+            setError({err})
         })
     }, [topic_name, location])
 
     function handleSelection(e){
-        setSelectedSortBy(e.target.value)
         if (topic_name){
             navigate(`/topics/${topic_name}?${e.target.value}`)
         } else {
             navigate(`/?${e.target.value}`)
         }
+    }
+
+    if(error) {
+        return <ErrorPage error={error.err.response}/>
     }
 
   return isLoading ? <Loading/> : (

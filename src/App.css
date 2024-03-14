@@ -122,3 +122,6 @@ img {
   cursor: pointer;
 }
 
+.error-page #home-link{
+  color: rgb(63, 8, 147);
+}

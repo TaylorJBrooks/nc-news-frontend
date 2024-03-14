@@ -3,18 +3,27 @@ import Loading from "./Loading";
 import { getCommentsByArticleId } from "../../api";
 import CommentCard from "./CommentCard";
 import AddComment from "./AddComment";
+import ErrorPage from "./ErrorPage";
 
 export default function CommentsList({ article_id }) {
   const [commentsList, setCommentsList] = useState([]);
   const [isLoading, setIsLoading] = useState(true);
+  const [error, setError] = useState(null);
 
   useEffect(() => {
     setIsLoading(true);
     getCommentsByArticleId(article_id).then(({ comments }) => {
       setCommentsList(comments);
       setIsLoading(false);
+      setError(null);
+    }).catch((err)=>{
+      setError({err})
     });
   }, []);
+
+  if(error) {
+    return <ErrorPage error={error.err.response}/>
+}
 
   return isLoading ? (
     <Loading />
