@@ -1,12 +1,14 @@
 import React, { useEffect, useState } from "react";
 import { getTopics } from "../../api";
 import { useLocation, useNavigate } from "react-router-dom";
+import ErrorPage from "./ErrorPage";
 
 export default function TopicsList() {
   const [topicsList, setTopicsList] = useState([]);
   const [selectedTopic, setSelectedTopic] = useState("All Articles");
   const navigate = useNavigate();
   const location = useLocation();
+  const [error, setError] = useState(null);
 
   useEffect(()=>{
     if(location.pathname === '/'){
@@ -17,6 +19,9 @@ export default function TopicsList() {
   useEffect(() => {
     getTopics().then(({ topics }) => {
       setTopicsList(topics);
+      setError(null)
+    }).catch((err)=>{
+      setError({err})
     });
   }, []);
 
@@ -27,6 +32,10 @@ export default function TopicsList() {
     } else {
       navigate(`/topics/${topic}`);
     }
+  }
+
+  if(error) {
+    return <ErrorPage error={error.err.response}/>
   }
 
   return (
