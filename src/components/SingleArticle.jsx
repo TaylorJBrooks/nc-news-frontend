@@ -5,6 +5,7 @@ import CommentsList from "./CommentsList";
 import Loading from "./Loading";
 import ErrorComponent from "./ErrorComponent";
 import ErrorPage from "./ErrorPage";
+import "./SingleArticle.css"
 
 export default function SingleArticle() {
   const { article_id } = useParams();
@@ -62,16 +63,16 @@ export default function SingleArticle() {
   ) : (
     <div className="single-article">
       <h2>{title}</h2>
+      <p>{created_at}</p>
       <p>Author: {author}</p>
-      <p>Created at: {created_at}</p>
       <img src={article_img_url} alt="" />
-      <p>Body: {body}</p>
-      <div className="article-card-section">
+      <p>{body}</p>
+      <div className="single-article-section">
         <p>Topic: {topic}</p>
         <p>Comments: {comment_count}</p>
         <p>Votes: {votes}</p>
       </div>
-      <div className="article-card-section">
+      <div className="single-article-section">
         <button onClick={()=>{handleVoteButtons(1)}} disabled={hasVoted}>Like This! +1</button>
         <button onClick={()=>{handleVoteButtons(-1)}} disabled={hasVoted}>Not For Me -1</button>
      </div>

@@ -3,6 +3,7 @@ import { getUsers } from "../../api";
 import Loading from "./Loading";
 import UserCard from "./UserCard";
 import ErrorPage from "./ErrorPage";
+import "./UsersList.css"
 
 export default function UsersList() {
   const [usersList, setUsersList] = useState([]);
@@ -27,13 +28,13 @@ export default function UsersList() {
   return isLoading ? (
     <Loading />
   ) : (
-    <>
+    <div className="users-page">
       <h2>Select User to Log In:</h2>
       <ul className="users-list">
         {usersList.map((user) => {
           return <UserCard key={user.username} user={user} />;
         })}
       </ul>
-    </>
+    </div>
   );
 }

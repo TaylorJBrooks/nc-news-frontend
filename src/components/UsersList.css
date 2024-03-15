@@ -1,0 +1,39 @@
+.users-page {
+  margin: auto;
+}
+
+.users-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  flex-wrap: wrap;
+  text-align: center;
+  width: 100%;
+  justify-content: center;
+}
+
+.user-card {
+  display: flex;
+  width: 100%;
+  max-width: 400px;
+  justify-content: space-evenly;
+  padding: 10px;
+  border-radius: 2rem;
+  border: 1px solid #ccc;
+  margin: 5px;
+}
+
+.user-card-section {
+  width: 50%;
+  height: 100px;
+}
+
+.user-card img {
+  object-fit: contain;
+}
+
+.user-card:hover {
+  background-color: rgb(227, 230, 230);
+  border: 2px solid black;
+}

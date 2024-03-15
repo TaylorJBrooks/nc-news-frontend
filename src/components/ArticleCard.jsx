@@ -19,6 +19,7 @@ export default function ArticleCard({ article }) {
     <Link to={linkTo}>
       <li className="article-card">
         <h2>{title}</h2>
+        <p>{UTCString} </p>
         <p>
           Author: {author}
         </p>
@@ -26,9 +27,6 @@ export default function ArticleCard({ article }) {
         <div className="article-card-section">
           <p>Comments: {comment_count}</p>
           <p>Votes: {votes}</p>
-        </div>
-        <div className="article-card-section">
-          <p>Created at: {UTCString} </p>
           <p>Topic: {topic}</p>
         </div>
       </li>

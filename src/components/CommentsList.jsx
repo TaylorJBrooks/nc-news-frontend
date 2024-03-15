@@ -30,7 +30,7 @@ export default function CommentsList({ selectedArticle, setSelectedArticle }) {
   return isLoading ? (
     <Loading />
   ) : (
-    <div>
+    <div className="comments-list-section">
         <h2>Comments:</h2>
       <AddComment setCommentsList={setCommentsList} article_id={selectedArticle.article_id}/>
     <ul className="comments-list">

@@ -30,11 +30,11 @@ export default function AddComment({setCommentsList, article_id}) {
     }
 
   return isPosting ? <p>Posting...</p> : (
-    <>
+    <div className='add-comment'>
     <label htmlFor='comment-input'>Add a Comment:</label>
     <textarea id='comment-input' value={newCommentInput} onChange={(e)=> setNewCommentInput(e.target.value)}/>
     <button onClick={handlePostComment} disabled={!loggedInUser.loggedIn || newCommentInput === ''}>{loggedInUser.loggedIn ? 'Post Comment' : 'Please log in to post a comment'}</button>
     <ErrorComponent isError={isError}/>
-    </>
+    </div>
   )
 }

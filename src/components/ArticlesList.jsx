@@ -8,6 +8,7 @@ import {
   useSearchParams,
 } from "react-router-dom";
 import ErrorPage from "./ErrorPage";
+import './ArticlesList.css'
 
 export default function ArticlesList() {
   const [articlesListItems, setArticlesListItems] = useState([]);
@@ -56,8 +57,8 @@ export default function ArticlesList() {
   return isLoading ? (
     <Loading />
   ) : (
-    <>
-      <label htmlFor="sort-by-dropdown">
+    <div className="articles-list-page">
+      <label htmlFor="sort-by-dropdown" id="sort-area">
         Sort By:
         <select
           id="sort-by-dropdown"
@@ -83,6 +84,7 @@ export default function ArticlesList() {
           return <ArticleCard key={article.article_id} article={article} />;
         })}
       </ul>
+      <div className="page-buttons">
       <button
         onClick={() => {
           setPage((currentPage) => currentPage - 1);
@@ -99,7 +101,7 @@ export default function ArticlesList() {
         disabled={10 * page >= totalCount}
       >
         Next Page
-      </button>
-    </>
+      </button></div>
+    </div>
   );
 }
