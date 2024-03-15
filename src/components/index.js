@@ -11,5 +11,6 @@ import UserCard from "./UserCard";
 import AddComment from "./AddComment";
 import TopicsList from "./TopicsList";
 import ErrorPage from "./ErrorPage";
+import FilterTopics from "./FilterTopics";
 
-export { Header, ArticlesList, ArticleCard, SingleArticle, CommentsList, CommentCard, Loading, ErrorComponent, UsersList, UserCard, AddComment, TopicsList, ErrorPage };
+export { Header, ArticlesList, ArticleCard, SingleArticle, CommentsList, CommentCard, Loading, ErrorComponent, UsersList, UserCard, AddComment, TopicsList, ErrorPage, FilterTopics };
