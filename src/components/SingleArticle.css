@@ -1,0 +1,47 @@
+.single-article {
+  margin: auto;
+  width: 50%;
+  min-width: 350px;
+  text-align: center;
+}
+
+.comment-card {
+  border: 1px solid black;
+  padding: 10px;
+}
+
+.single-article img {
+  width: 100%;
+  padding: 0px 10px;
+}
+
+.comments-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  width: 100%;
+  text-align: left;
+}
+
+.single-article-section {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-evenly;
+}
+
+.add-comment {
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    text-align: left;
+    width: 70%;
+    margin: auto;
+    margin-bottom: 10px;
+
+}
+
+.add-comment button {
+    margin-top: 5px;
+   width: 70%;
+   align-self: center;
+}

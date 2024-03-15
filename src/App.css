@@ -7,7 +7,7 @@
 #root{
   display: grid;
   grid-template-columns: auto;
-  grid-template-rows: 15vh auto;
+  grid-template-rows: 20vh auto;
   grid-template-areas: 
   "header"
   "content";
@@ -15,6 +15,7 @@
 }
 
 .header-section {
+  position: fixed;
   grid-area: header;
   display: grid;
   grid-template-columns: auto auto auto;
@@ -25,6 +26,11 @@
   text-align: center;
   justify-items: center;
   align-items: center;
+  background-color: white;
+  height: 20vh;
+  top: 0;
+  left: 0;
+  width: 100%;
 }
 
 .header {
@@ -60,52 +66,9 @@
   grid-area: content;
 }
 
-.articles-list {
-  list-style: none;
-  padding: 0px ;
-  margin: auto;
-  width: 50%;
-  min-width: 350px;
-}
-
 img {
   width: 100%;
   padding: 0px 10px;
-}
-
-.article-card {
-  border: 1px solid black;
-  padding: 10px;
-}
-
-.article-card:hover {
-  background-color: rgb(227, 230, 230);
-  border: 2px solid black;
-}
-
-.single-article {
-    margin: auto;
-    width: 50%;
-    min-width: 350px;
-    text-align: justify;
-}
-
-.comments-list {
-  list-style: none;
-  padding: 0;
-  margin: 0;
-  width: 100%;
-  text-align: justify;
-}
-
-.comment-card {
-    border: 1px solid black;
-    padding: 10px;
-}
-
-.article-card-section {
-    display: flex;
-    justify-content: space-evenly;
 }
 
 .user-card {
