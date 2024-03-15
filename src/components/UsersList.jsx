@@ -27,13 +27,13 @@ export default function UsersList() {
   return isLoading ? (
     <Loading />
   ) : (
-    <>
+    <div className="users-page">
       <h2>Select User to Log In:</h2>
       <ul className="users-list">
         {usersList.map((user) => {
           return <UserCard key={user.username} user={user} />;
         })}
       </ul>
-    </>
+    </div>
   );
 }

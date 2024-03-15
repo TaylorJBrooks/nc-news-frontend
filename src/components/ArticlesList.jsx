@@ -56,7 +56,7 @@ export default function ArticlesList() {
   return isLoading ? (
     <Loading />
   ) : (
-    <>
+    <div className="articles-list-page">
       <label htmlFor="sort-by-dropdown">
         Sort By:
         <select
@@ -100,6 +100,6 @@ export default function ArticlesList() {
       >
         Next Page
       </button>
-    </>
+    </div>
   );
 }
