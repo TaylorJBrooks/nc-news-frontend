@@ -23,7 +23,7 @@ export default function SingleArticle() {
 
   const [isLoading, setIsLoading] = useState(true);
   const [isError, setIsError] = useState(false)
-  const [hasVoted, setHasVoted] = useState(false)
+  const [hasVoted, setHasVoted] = useState(0)
   const [error, setError] = useState(null);
 
   useEffect(() => {
@@ -38,7 +38,7 @@ export default function SingleArticle() {
   }, []);
 
   function handleVoteButtons(vote){
-    setHasVoted(true)
+    setHasVoted((currVote)=>currVote+vote)
     setSelectedArticle((currArticle)=>{
         return {...currArticle, votes: currArticle.votes + vote}
     })
@@ -50,7 +50,7 @@ export default function SingleArticle() {
             return {...currArticle, votes: currArticle.votes - vote}
         })
         setIsError(true)
-        setHasVoted(false)
+        setHasVoted((currVote)=>currVote - vote)
     })
   }
 
@@ -73,8 +73,8 @@ export default function SingleArticle() {
         <p>Votes: {votes}</p>
       </div>
       <div className="single-article-section">
-        <button onClick={()=>{handleVoteButtons(1)}} disabled={hasVoted}>Like This! +1</button>
-        <button onClick={()=>{handleVoteButtons(-1)}} disabled={hasVoted}>Not For Me -1</button>
+        <button onClick={()=>{handleVoteButtons(1)}} disabled={hasVoted === 1}>Like This! +1</button>
+        <button onClick={()=>{handleVoteButtons(-1)}} disabled={hasVoted === -1}>Not For Me -1</button>
      </div>
      <ErrorComponent isError={isError}/>
       <CommentsList selectedArticle={selectedArticle} setSelectedArticle={setSelectedArticle} />
