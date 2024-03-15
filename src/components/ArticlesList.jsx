@@ -9,6 +9,7 @@ import {
 } from "react-router-dom";
 import ErrorPage from "./ErrorPage";
 import './ArticlesList.css'
+import FilterTopics from "./FilterTopics";
 
 export default function ArticlesList() {
   const [articlesListItems, setArticlesListItems] = useState([]);
@@ -57,8 +58,9 @@ export default function ArticlesList() {
   return isLoading ? (
     <Loading />
   ) : (
-    <div className="articles-list-page">
-      <label htmlFor="sort-by-dropdown" id="sort-area">
+    <div className="articles-list-page"><div id="sort-area">
+      <FilterTopics/>
+      <label htmlFor="sort-by-dropdown">
         Sort By:
         <select
           id="sort-by-dropdown"
@@ -78,7 +80,7 @@ export default function ArticlesList() {
             Comments low to high
           </option>
         </select>
-      </label>
+      </label></div>
       <ul className="articles-list">
         {articlesListItems.map((article) => {
           return <ArticleCard key={article.article_id} article={article} />;

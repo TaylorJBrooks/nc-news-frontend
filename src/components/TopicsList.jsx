@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from "react";
 import { getTopics } from "../../api";
-import { useLocation, Link, useParams } from "react-router-dom";
+import { useLocation, Link } from "react-router-dom";
 import ErrorPage from "./ErrorPage";
 
 export default function TopicsList() {
