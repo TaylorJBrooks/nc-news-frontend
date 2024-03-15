@@ -3,6 +3,7 @@ import { getUsers } from "../../api";
 import Loading from "./Loading";
 import UserCard from "./UserCard";
 import ErrorPage from "./ErrorPage";
+import "./UsersList.css"
 
 export default function UsersList() {
   const [usersList, setUsersList] = useState([]);
